@@ -62,7 +62,7 @@ Now that we've generated our very own keypair, we can use the `--list-keys` flag
 
 To put everything we've just done into practice we're going to verify the install files for the official Monero software. So let's head over to the official Monero [github repository](https://github.com/monero-project/monero) and click on the "Releases" link on the right hand side. The latest release will be at the top of the page. 
 
-Scroll down to "Official Download Links" and download the file that suits you best. For me it's the 64-bit Linux version.
+Scroll down to "Official Download Links" and download the file that suits you best. For me it's the 64-bit Windows version.
 
 Now that it's downloaded we’ll need two important pieces of information:
 
