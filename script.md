@@ -66,7 +66,7 @@ Scroll down to "Official Download Links" and download the file that suits you be
 
 Now that it's downloaded we’ll need two important pieces of information:
 
-- Either a signed copy of the file hashes; or a signature file ending with '.acs'
+- Either a signed copy of the file hashes; or a signature file ending with '.asc'
 - The public key of the person who signed them
 
 The first of these is located in the "hashes.txt" which you'll find via a link on the release page. I'm going to right click and "save link as". Let's open it and take a look at what we've got here. 
