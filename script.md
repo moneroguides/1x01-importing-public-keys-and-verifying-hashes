@@ -133,9 +133,9 @@ We at Monero Guides host our [public key](https://github.com/moneroguides/monero
 
 To do this, import the monero-guides public key into your keyring and then save the signed message into a text file. I'm going to create a new text file called "message.txt". If everything is done correctly it can be verifed using the previous steps.
 
-You can sign your own "clear text" messages too using the command `gpg --user * --clearsign message.txt`. The * (wildcard) should be replaced by the name given to the private key you wish to use. If you create multiple key pairs and you're unsure of your user name, you can use the command `gpg --list-keys` as we've done previously.
+You can sign your own "clear text" messages too using the command `gpg --user * --clearsign message.txt`. The asterisk ( * ) should be replaced by the name given to the private key you wish to use. If you created multiple key pairs and you're unsure of your user name, you can use the command `gpg --list-keys` as we've done previously.
 
-It's also possible to encrypt and decrypt messages. The most convenient way to share these messages is using the ACSII armor function. The following command allows someone who has the monero-guides public key to decrypt any open message from us `gpg --user monero-guides --sign --armor message.txt`. 
+It's also possible to encrypt and decrypt messages. The most convenient way to share these messages is using the ACSII armor function. As an example we'll show you how to decrypt and open a message from us using our public key: `gpg --user monero-guides --sign --armor message.txt`. 
 
 Once the command is finished running you should have a new file in the working directory. It should have the same format as your original file with the suffix ".acs".
 
@@ -148,10 +148,8 @@ Watch out for an easter egg coming up in the following few videos. There will be
 
 ### OUTRO
 
-PGP relies heavily on trust, it's for that reason you should be sure that the public key you have in your keyring is in fact trustworthy.
-
-If you’re not, then you may as well skip this step and accept the consequences. That being said, checking the software you download is best practice.
+To close out this tutorial we'll leave you with this piece of advice: PGP relies heavily on trust so you should be sure that the public key you have in your keyring is in fact trustworthy. If it isn't, then you may as well skip everything in this guide and accept the potential risks of running an unverified file. Although everything in this tutorial is optional, it is best practice and greatly reduces the capabilities of bad actors to infiltrate your machine.
 
 The instructions in this video will be relevant to a lot of our other videos so please make yourself familiar with GPG.
 
-Anyway, that's it for this installment, peace be with you privacy fans.
+Anyway, that's it for this installment, may your newfound GPG powers bring you peace and privacy!
