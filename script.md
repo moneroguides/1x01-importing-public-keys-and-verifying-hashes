@@ -129,7 +129,7 @@ GREAT! Now we know the software that we have is the one intended by the person w
 
 GPG has a lot of interesting features and gives users the ability to sign, encrypt and decrypt messages.
 
-The 'hashes.txt' file we used earlier was signed with GPG, as are our [contact details](https://moneroguides.org/about/) on our website and the scripts for our videos.
+The 'hashes.txt' file we used earlier was signed with GPG, as well as our [contact details](https://moneroguides.org/about/) on our website and the scripts for our videos.
 
 In order sign your own "clear text" messages, use the command `gpg --user * --clearsign message.txt`. The asterisk ( * ) should be replaced by the name given to the private key you wish to use. If you created multiple key pairs and you're unsure of your user name, you can use the command `gpg --list-keys` as we've done previously.
 
