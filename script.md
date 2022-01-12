@@ -17,23 +17,23 @@ Following these steps before running anything on your machine will mean you're s
 
 With that out of the way, let's get on to the matter at hand, the GNU Privacy Guard (GPG).
 
-GPG is a complete and free implementation of the OpenPGP standard that has been in circulation since 1997. 
+GPG is a complete and free implementation of the OpenPGP standard that's been in circulation since 1997. 
 GPG is free software, meaning that it can be freely used, modified and distributed. I recommend taking a look at [the GNU project and the Free Software Foundation](https://www.gnu.org/gnu/gnu.html). Their webpage, is pretty interesting and you'll find a lot more free software there.
 
-You can also learn more about the OpenPGP standard [on their wiki page](https://en.wikipedia.org/wiki/Pretty_Good_Privacy).
+You can also learn more about the OpenPGP standard [on their wiki page](https://en.wikipedia.org/wiki/Pretty_Good_Privacy). All of this is linked in the description.
 
-GPG allows anyone to encrypt and sign their data and communications. You'll typically be prompted to carry out some basic operations when handling Monero-related software so we thought it would be good to have an easy to follow guide.
+GPG allows anyone to encrypt and sign their data and communications. You'll typically be prompted to carry out some basic operations when handling Monero-related software so we thought it'd be good to have an easy to follow guide.
 
 If you haven't installed the software for your operating system already, please go ahead and do so now. As with all our videos, you'll find all the required links in the description.
 
-Please be aware that most Linux distributions will have GPG installed already. If you find that you don't have it, please check your package manager and install it from there.
+Most Linux distributions will have GPG installed already. If you find that you don't have it, please check your package manager and install it from there. For Windows users you'll need to install Kleopatra.
 
 
 ### CREATING YOUR OWN KEYS
 
 Let's start by opening up a terminal or Powershell window and checking which version of GPG we have installed.
 
-Don't worry that I'm using windows, this is relevant to all OS's. Do take a look at the video description as most of the commands we’re going to use can be found there. Feel free to copy and paste along with this video, but bare in mind that it's good practice to double check the content remains unedited.
+Don't worry that I'm using Windows, these steps are relevant to all OS's. Do take a look at the video description as most of the commands we’re going to use can be found there. Feel free to copy and paste along with this video, but bare in mind that it's good practice to double check the content remains unedited.
 
 Let's start by typing `gpg --version` and pressing enter. If you're not familiar with using the command line, please remember, you need to hit enter after each time that you type a command for the terminal to read your input. 
 
@@ -41,7 +41,7 @@ If you weren't sure if you had it installed, this is a pretty good test. This co
 
 Now we've confirmed that it's installed, we're going to create our very own set of shiny new keys.
 
-Keys typically come in pairs, a private key and a public key. In simple terms, a private key is one which you use to prove who you are and a public key is one which is used to tell other people who you are. It's a pretty simple system, but has deep roots in cryptography. If you're interested in reading a little more about the fundamentals, check out the link in the description entitled [How PGP Works](https://users.ece.cmu.edu/~adrian/630-f04/PGP-intro.html).
+Keys typically come in pairs, a private key and a public key. In simple terms, a private key is used to prove who you are and a public key is used to tell other people who you are. It's a pretty simple system, but has deep roots in cryptography. If you're interested in reading a little more about the fundamentals, check out the link in the description entitled [How PGP Works](https://users.ece.cmu.edu/~adrian/630-f04/PGP-intro.html).
 
 To generate our own set of keys we're going to use the command `gpg --full-generate-key`, don't forget to include the hyphens.
 
@@ -49,13 +49,13 @@ First it will ask you what kind of key you'd like to create. For the purposes of
 
 Next it will ask you about the level of encryption you require, the larger the number the more data is used to generate the keys. More data generally means more secure. We're going to choose 4096 bits as it offers the highest level of encryption.
 
-We will then be asked how long we want our keys to remain valid, this is a personal choice. As there is no limit to the number of keys I can generate and because I won't be hosting my keys publicly, I'm going to choose 0, 'never expires'.
+We'll then be asked how long we want our keys to remain valid, this is a personal choice. As there is no limit to the number of keys I can generate and because I won't be hosting my keys publicly, I'm going to choose 0, 'never expires'.
 
-All keys are assigned user IDs. They're typically made up of a name, comment and email address. For the purposes of this video, this name and email address could be quite literally anything. Your own credentials could even be as crazy as mine. Once we've entered all this information we're going to type 'o' for 'okay', but before we hit enter I want to warn those who like to use password generators: you're going to need to enter a new password in the next step.
+All keys are assigned user IDs. They're typically made up of a name, comment and email address. For the purposes of this video I'm going to use the following credentials. Once we've entered all this information we're going to type 'o' for 'okay', but before we hit enter I want to warn those who like to use password generators: you're going to need to enter a new password in the next step.
 
-Once we've entered and confirmed the password, we're going to generate some entropy, in other words, move the mouse and bash the keyboard a bit. The encryption of your keys is based on the state of your system, moving the mouse and switching windows helps create more randomness.
+Once we've entered and confirmed the password, we're going to generate some entropy, in other words, move the mouse and bash the keyboard a bit. The encryption of your keys is based on the state of your system, moving the mouse and switching windows and typinghtrseyhrsduj6rtsgtbtrsur6sikrtdyhrdshtrshrtes helps create more randomness.
 
-Now that we've generated our very own keypair, we can use the `--list-keys` flag to verify it's existence; `gpg --list-keys`. During the creation of ours keys, GPG has automatically added them to something called a keyring. The subject of key rings are a little outside the scope of this video, however it's important to know that they may be different and you can create as many as you like. We won't be specifying any in this video and beacuse of that we're going to be working with the default keyring.
+Now that we've generated our very own keypair, we can use the `--list-keys` flag to verify it's existence; `gpg --list-keys`. During the creation of ours keys, GPG has automatically added them to something called a keyring. The subject of key rings is a little outside the scope of this video, however it's important to know that they may be different and you can create as many as you like. We won't be specifying any in this video and beacuse of that we're going to be working with the default keyring.
 
 
 ### VERIFYING & IMPORTING PUBLIC KEYS
@@ -77,9 +77,9 @@ If you look at the heading and footer, you'll notice that this file actually com
 
 This leads us onto the second piece of information we need; Binaryfate's public key. We can find this via the github page we started on. Click on the folder labelled "utils", then "gpg_keys". Here we can find a list of all the contributors' public keys. Right click on binaryfate's name and select "save link as".
 
-Next, open your file explorer and navigate to the directory in which you saved these files. Ensure that both files are in the same folder.
+Next, open your file explorer and navigate to the directory in which you saved these files. Ensure that both files are in the same folder. For me, I've just dumped them on the desktop.
 
-With the file explorer open, right click and select ‘open terminal here’. If you're a windows user, you'll need to use 'shift+right-click' and select open Powershell here.
+With the file explorer open, shift+right-click and select ‘open Powershell here’. If you're a Linux user, you can 'right-click' and select open terminal here.
 
 At this point we’re interested in taking a look at the fingerprint of binaryfate's public key. Fingerprints are best thought of as summaries of the key.
 We can view this fingerprint with the following command: `gpg --keyid-format long --with-fingerprint binaryfate.asc`
