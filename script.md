@@ -1,7 +1,7 @@
 ### Prerequisites:
 
-* gpg2 (Linux)
-* Kleopatra (Windows) - [GPG4WIN](https://www.gpg4win.org)
+- gpg2 (Linux)
+- Kleopatra (Windows) - [GPG4WIN](https://www.gpg4win.org)
 
 .....................................................
 
@@ -9,9 +9,9 @@
 
 Hello there travelers and welcome to the first installment in the "Getting to grips with Monero" series.
 
-This video is for those of you who want to ensure that the software you're downloading and running is in fact the one that the authors intended you to receive. In other words this is for the security conscious user. 
+This video is for those of you who want to ensure that the software you're downloading and running is in fact the one that the authors intended you to receive. In other words this is for the security conscious user.
 
-It may seem like a pain at first, but most of what we're doing here is setup and won't be required when verifying files in future. It's also just a good habit to get into and once you get the hang of it, it's a breeze. 
+It may seem like a pain at first, but most of what we're doing here is setup and won't be required when verifying files in future. It's also just a good habit to get into and once you get the hang of it, it's a breeze.
 
 Following these steps before running anything on your machine will mean you're safer than if you don't, but please be aware that this is in a relative sense. With these steps you're ensuring that you're running the software the author intended; it isn't a way to ensure that what the author intended is safe.
 
@@ -28,14 +28,13 @@ If you haven't installed the software for your operating system already, please 
 
 Most Linux distributions will have GPG installed already. If you find that you don't have it, please check your package manager and install it from there. For Windows users you'll need to install Kleopatra.
 
-
 ### CREATING YOUR OWN KEYS
 
 Let's start by opening up a terminal or Powershell window and checking which version of GPG we have installed.
 
 Don't worry that I'm using Windows, these steps are relevant to Linux as well. Feel free to copy and paste along with this video, but bare in mind that it's good practice to double check the content remains unedited.
 
-Let's start by typing `gpg --version` and pressing enter. If you're not familiar with using the command line, please remember, you need to hit enter after each time that you type a command for the terminal to read your input. 
+Let's start by typing `gpg --version` and pressing enter. If you're not familiar with using the command line, please remember, you need to hit enter after each time that you type a command for the terminal to read your input.
 
 If you weren't sure if you had it installed, this is a pretty good test. This command will print some interesting information, including: the version, the licence, the home directory for GPG and the supported algorithms.
 
@@ -45,7 +44,7 @@ Keys typically come in pairs, a private key and a public key. In simple terms, a
 
 To generate our own set of keys we're going to use the command `gpg --full-generate-key`, don't forget to include the hyphens.
 
-First it will ask you what kind of key you'd like to create. For the purposes of this video we'll be using the default option 'RSA', so we'll select option 1. 
+First it will ask you what kind of key you'd like to create. For the purposes of this video we'll be using the default option 'RSA', so we'll select option 1.
 
 Next it will ask you about the level of encryption you require, the larger the number the more data is used to generate the keys. More data generally means more secure. We're going to choose 4096 bits as it offers the highest level of encryption.
 
@@ -57,10 +56,9 @@ Once we've entered and confirmed the password, we're going to generate some entr
 
 Now that we've generated our very own keypair, we can use the `--list-keys` flag to verify it's existence; `gpg --list-keys`. During the creation of ours keys, GPG has automatically added them to something called a keyring. The subject of key rings is a little outside the scope of this video, however it's important to know that they may be different and you can create as many as you like. We won't be specifying any in this video and beacuse of that we're going to be working with the default keyring.
 
-
 ### VERIFYING & IMPORTING PUBLIC KEYS
 
-To put everything we've just done into practice we're going to verify the install files for the official Monero software. So let's head over to the official Monero [github repository](https://github.com/monero-project/monero) and click on the "Releases" link on the right hand side. The latest release will be at the top of the page. 
+To put everything we've just done into practice we're going to verify the install files for the official Monero software. So let's head over to the official Monero [github repository](https://github.com/monero-project/monero) and click on the "Releases" link on the right hand side. The latest release will be at the top of the page.
 
 Scroll down to "Official Download Links" and download the file that suits you best. For me it's the 64-bit Windows version.
 
@@ -69,11 +67,11 @@ Now that it's downloaded we’ll need two important pieces of information:
 - Either a signed copy of the file hashes; or a signature file ending with '.asc'
 - The public key of the person who signed them
 
-The first of these is located in the "hashes.txt" which you'll find via a link on the release page. I'm going to right click and "save link as". Let's open it and take a look at what we've got here. 
+The first of these is located in the "hashes.txt" which you'll find via a link on the release page. I'm going to right click and "save link as". Let's open it and take a look at what we've got here.
 
 Hashes are unique identifiers that are generated by a hashing algorithm. These algorithms are generated using information about the file's contents so we can detect changes easily and quickly. In our case, we're interested in making sure that the hash of the file we've downloaded matches the hash contained in this file.
 
-If you look at the heading and footer, you'll notice that this file actually comes in the form of a signed message. This is important, because now we can see if these hashes were signed by someone we know. If we take a look just above the signature we can see that the person who signed it was a contributor by the name 'binaryfate'. 
+If you look at the heading and footer, you'll notice that this file actually comes in the form of a signed message. This is important, because now we can see if these hashes were signed by someone we know. If we take a look just above the signature we can see that the person who signed it was a contributor by the name 'binaryfate'.
 
 This leads us on to the second piece of information we need; Binaryfate's public key. We can find this via the github page we started on. Click on the folder labelled **utils**, then **gpg_keys**. Here we can find a list of all the contributors' public keys. Click on **binaryfate.asc** and then right-click **Raw** and save it as an .asc file.
 
@@ -91,29 +89,31 @@ In our case, we can find the fingerprint for binaryfate's public key on the [Get
 
 Now that we have a little more confidence in the key we've downloaded we're going to use the command `gpg --import binaryfate.asc`. Once again we can use `gpg --list-keys` to verify that it's been added to our keyring.
 
-
 ### SIGNING SOMEONE ELSE'S PUBLIC KEY
 
 This step is in many cases unnecessary and is more relevant to public keyrings and the pgp ecosystem as a whole. It's particularly important for something called the 'web of trust', which is totally outside the scope of this video. However you can learn more about the [web of trust](https://wiki.p2pfoundation.net/Web_of_Trust) through the p2p foundation. For us, going through this step means that you have a more simple log when you verify signatures in the future.
 
-It's possible to add this level of trust to the signature you have imported with the `--edit-key` flag. In our case we will use the command `gpg --edit-key binaryfate@getmonero.org`. Once GPG is running you'll see 'gpg>', you now have a few options including the ability to sign it with your own key, type ‘help’ to find out what else you can do.
+It's possible to add this level of trust to the signature you've imported with the `--edit-key` flag. In our case we'll use the command `gpg --edit-key` along with binaryfate's email address to identify the key:
 
-For now, let’s type 'sign', confirm with 'y' and then enter the password you set up in the previous step.
+`gpg --edit-key binaryfate@getmonero.org`.
+
+This command will start up the GPG prompt. You'll know it's running when you see `gpg>`, you now have a few options including the ability to sign it with your own key, type ‘help’ to find out what else you can do.
+
+For now, let’s type 'sign', confirm with 'y' and then enter the password you set up in the previous step. Don't worry if you see `failed: Access is denied`. This seems to happen every time the password prompt appears and does not mean the operation has failed. If you try to sign the key again you will be able to confirm whether or not the first attempt was successful
 
 All done.
 
-Use 'ctrl+c' to exit gpg.
-
+Use 'ctrl+c' to exit the gpg prompt.
 
 ### VERIFYING SIGNATURES & HASHES
 
 Everything we've done so far has now given us the ability to verify the signature in the text file we downloaded earlier.
 
-The next command we're going to use is `gpg --verify hashes.txt`. If you're typing this out yourself, remember that you can use 'TAB' to autocomplete.
+The next command we're going to use is `gpg --verify hashes.txt`. If you're typing this out yourself, remember that you can use 'TAB' to autocomplete file names.
 
 If everything has gone to plan, we should see a message stating 'Good signature from "binaryFate <binaryfate@getmonero.org>"'.
 
-If you don't receive this message, please follow the procedure recommended upon failed fingerprint verification.
+If you don't receive this message, please be sure to verify the links you used and report your findings to the community.
 
 Now we can compare the hashes in the text file to those of the file we downloaded.
 
@@ -123,25 +123,23 @@ If you're using Windows, use the command `Get-Filehash` and then the name of the
 
 GREAT! Now we know the software that we have is the one intended by the person who signed these hashes.
 
-
 ### SIGNING AND DECRYPTING MESSAGES
 
 GPG has a lot of interesting features and gives users the ability to sign, encrypt and decrypt messages.
 
-The 'hashes.txt' file we used earlier was signed with GPG, as well as our [contact details](https://moneroguides.org/about/) on our website and the scripts for our videos.
+The 'hashes.txt' file we used earlier was signed with GPG by its creator, this also applies to our [contact details](https://moneroguides.org/about/) on our website and the scripts for our videos.
 
-In order sign your own "clear text" messages, use the command: `gpg --user * --clearsign message.txt`. The asterisk ( * ) should be replaced by the name given to the private key you wish to use. If you created multiple key pairs and you're unsure of your user name, you can use the command `gpg --list-keys` as we've done previously.
+Let's have a go at signing our own "clear text" message. First create a text file called anything you like. Here's one I made earlier. Then use the command: `gpg --user * --clearsign message.txt`. The asterisk ( * ) should be replaced by the name given to the private key you wish to use. The file name message.txt can be replaced by the name of whatever file you wish to sign. If you created multiple key pairs and you're unsure of your user name, you can use the command `gpg --list-keys` as we've done previously.
 
 Once the command is finished running you should have a new file in the working directory. It should have the same format as your original file with the suffix ".asc".
 
-It's also possible to encrypt and decrypt messages. The most convenient way to share these messages is using the ACSII armor function. The following command will create an encrypted message using the monero-guides private key: `gpg --user monero-guides --sign --armor message.txt`. Anyone who has our public key, is able to decryot this message.
+It's also possible to encrypt and decrypt messages. The most convenient way to share these messages is using the ACSII armor function. The following command will create an encrypted message using the monero-guides private key: `gpg --user monero-guides --sign --armor message.txt`. Anyone who has our public key, is able to decrypt this message.
 
 Decrypting these messages is rather simple. All we need to do is use the command `gpg --decrypt message.txt.asc`.
 
-Another great feature is the ability to encrypt messages which can only be decrypted by specific people. To do this, you need the public key of the recipient. In the next example we're going to encrypt a message that can be decrypted by only us at monero-guides: `gpg --user monero-guides --recpient monero-guides --sign --armor message.txt`.
+Another great feature is the ability to encrypt messages which can only be decrypted by specific people. To do this, you need the public key of the recipient. In the next example we're going to encrypt a message that can be decrypted by only us at monero-guides: `gpg --user monero-guides --recipient monero-guides --sign --armor message.txt`.
 
-Watch out for the easter eggs coming up in the following videos. There will be a nice reward for a lucky viewer who's been paying attention.
-
+Watch out for the easter eggs coming up in the following videos. There'll be a nice reward for a lucky viewer who's been paying attention.
 
 ### OUTRO
 
