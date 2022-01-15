@@ -24,7 +24,7 @@ You can also learn more about the OpenPGP standard [on their wiki page](https://
 
 GPG allows anyone to encrypt and sign their data and communications. You'll typically be prompted to carry out some basic operations when handling Monero-related software so we thought it'd be good to have an easy to follow guide.
 
-If you haven't installed the software for your operating system already, please go ahead and do so now. As with all our videos, you'll find all the required links in the description.
+If you haven't installed the software for your operating system already, please go ahead and do so now. As with all our videos, you'll find all the required links and terminal commands in the description.
 
 Most Linux distributions will have GPG installed already. If you find that you don't have it, please check your package manager and install it from there. For Windows users you'll need to install Kleopatra.
 
@@ -33,7 +33,7 @@ Most Linux distributions will have GPG installed already. If you find that you d
 
 Let's start by opening up a terminal or Powershell window and checking which version of GPG we have installed.
 
-Don't worry that I'm using Windows, these steps are relevant to Linux as well. Do take a look at the video description as most of the commands we’re going to use can be found there. Feel free to copy and paste along with this video, but bare in mind that it's good practice to double check the content remains unedited.
+Don't worry that I'm using Windows, these steps are relevant to Linux as well. Feel free to copy and paste along with this video, but bare in mind that it's good practice to double check the content remains unedited.
 
 Let's start by typing `gpg --version` and pressing enter. If you're not familiar with using the command line, please remember, you need to hit enter after each time that you type a command for the terminal to read your input. 
 
@@ -81,9 +81,7 @@ Next, open your file explorer and navigate to the directory in which you saved t
 
 With the file explorer open, shift+right-click and select ‘open Powershell here’. If you're a Linux user, you can 'right-click' and select open terminal here. Since I'm a Windows 11 user it's a bit different for me as I just have to right-click and choose 'Open in Windows Terminal.' In all cases it's a fairly similar process.
 
-At this point we’re interested in taking a look at the fingerprint of binaryfate's public key. Fingerprints are best thought of as summaries of the key. We can view this fingerprint with the following command which you find in the video description. I'm just going to copy and paste it. 
-
-`gpg --keyid-format long --with-fingerprint binaryfate.asc`
+At this point we’re interested in taking a look at the fingerprint of binaryfate's public key. Fingerprints are best thought of as summaries of the key. We can view this fingerprint with the following command: `gpg --keyid-format long --with-fingerprint binaryfate.asc`.
 
 Fingerprints are a useful way of making sure that the key you're importing is actually the one you want. If you know the person whose key you're trying to import you can check it with them the old-fashioned way by just asking if this key belongs to them, but you'll often find that a fingerprint will be hosted somewhere on the internet so you won't need to contact anybody directly.
 
