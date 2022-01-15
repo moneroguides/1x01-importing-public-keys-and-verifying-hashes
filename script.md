@@ -130,15 +130,15 @@ GPG has a lot of interesting features and gives users the ability to sign, encry
 
 The 'hashes.txt' file we used earlier was signed with GPG, as well as our [contact details](https://moneroguides.org/about/) on our website and the scripts for our videos.
 
-In order sign your own "clear text" messages, use the command `gpg --user * --clearsign message.txt`. The asterisk ( * ) should be replaced by the name given to the private key you wish to use. If you created multiple key pairs and you're unsure of your user name, you can use the command `gpg --list-keys` as we've done previously.
+In order sign your own "clear text" messages, use the command: `gpg --user * --clearsign message.txt`. The asterisk ( * ) should be replaced by the name given to the private key you wish to use. If you created multiple key pairs and you're unsure of your user name, you can use the command `gpg --list-keys` as we've done previously.
 
 Once the command is finished running you should have a new file in the working directory. It should have the same format as your original file with the suffix ".asc".
 
-It's also possible to encrypt and decrypt messages. The most convenient way to share these messages is using the ACSII armor function. The following command will create an encrypted message using the monero-guides private key `gpg --user monero-guides --sign --armor message.txt`. Anyone who has our public key, is able to decryot this message.
+It's also possible to encrypt and decrypt messages. The most convenient way to share these messages is using the ACSII armor function. The following command will create an encrypted message using the monero-guides private key: `gpg --user monero-guides --sign --armor message.txt`. Anyone who has our public key, is able to decryot this message.
 
 Decrypting these messages is rather simple. All we need to do is use the command `gpg --decrypt message.txt.asc`.
 
-Another great feature is the ability to encrypt messages which can only be decrypted by specific people. To do this, you need the public key of the recipient. In the next example we're going to encrypt a message that can be decrypted by only us at monero-guides `gpg --user monero-guides --recpient monero-guides --sign --armor message.txt`.
+Another great feature is the ability to encrypt messages which can only be decrypted by specific people. To do this, you need the public key of the recipient. In the next example we're going to encrypt a message that can be decrypted by only us at monero-guides: `gpg --user monero-guides --recpient monero-guides --sign --armor message.txt`.
 
 Watch out for the easter eggs coming up in the following videos. There will be a nice reward for a lucky viewer who's been paying attention.
 
