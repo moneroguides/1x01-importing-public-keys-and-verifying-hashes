@@ -129,7 +129,7 @@ GPG has a lot of interesting features and gives users the ability to sign, encry
 
 The 'hashes.txt' file we used earlier was signed with GPG by its creator, this also applies to our [contact details](https://moneroguides.org/about/) on our website and the scripts for our videos.
 
-Let's have a go at signing our own "clear text" message. First create a text file, you may name it however you like. Here's one I made earlier. Then use the command: `gpg --user * --clearsign message.txt`. The asterisk ( * ) should be replaced by the name given to the private key you wish to use and the file name **message.txt** should be replaced by your file name. If you created multiple key pairs and you're unsure of your user name, you can use the command `gpg --list-keys` as we've done previously.
+Let's have a go at signing our own "clear text" message. First create a text file called anything you like. Here's one I made earlier. Then use the command: `gpg --user * --clearsign message.txt`. The asterisk ( * ) should be replaced by the name given to the private key you wish to use. The file name message.txt can be replaced by the name of whatever file you wish to sign. If you created multiple key pairs and you're unsure of your user name, you can use the command `gpg --list-keys` as we've done previously.
 
 Once the command is finished running you should have a new file in the working directory. It should have the same format as your original file with the suffix ".asc".
 
