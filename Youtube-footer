@@ -1,0 +1,44 @@
+Prerequisites:
+
+  Kleopatra (GPG4Win) - https://www.gpg4win.org/download.html
+  GPG2 (Linux)
+
+.....................................................................
+
+0:00 INTRO
+2:14 CREATING YOUR OWN KEYS 
+5:47 VERIFYING & IMPORTING PUBLIC KEYS
+10:23 SIGNING SOMEONE ELSE'S PUBLIC KEY
+11:55 VERIFYING SIGNATURES & HASHES
+13:15 SIGNING AND DECRYPTING MESSAGES
+15:05 OUTRO
+
+.....................................................................
+
+gpg --version
+gpg --full-generate-key
+gpg --keyid-format long --with-fingerprint binaryfate.asc
+gpg --import binaryfate.asc
+gpg --edit-key binaryfate@getmonero.org
+gpg --verify hashes.txt
+sha256sum --check hashes.txt
+Get-Filehash
+gpg --user * --clearsign message.txt
+gpg --user * --sign --armor message.txt
+gpg --decrypt message.txt.asc
+gpg --user * --recipient * --sign --armor message.txt
+
+.....................................................................
+
+GNU Project Website - https://www.gnu.org/gnu/gnu.html
+PGP Wiki - https://en.wikipedia.org/wiki/Pretty_Good_Privacy
+How PGP works - https://users.ece.cmu.edu/~adrian/630-f04/PGP-intro.html
+Official Monero Github Repo - https://github.com/monero-project/monero
+Getmonero Verification Guide - https://www.getmonero.org/resources/user-guides/verification-allos-advanced.html
+P2P Foundation (web of trust) - https://wiki.p2pfoundation.net/Web_of_Trust
+Moneroguides Contact Details - https://moneroguides.org/about/
+
+.....................................................................
+
+All contents of this video are valid on release, please keep in mind that future updates of P2Pool may mean that some steps are no longer required.
+If enough of these changes occur a new video will be released.
