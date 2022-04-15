@@ -150,3 +150,5 @@ To close out this tutorial we'll leave you with this piece of advice: PGP relies
 The instructions in this video will be relevant to a lot of our other videos so please make yourself familiar with GPG.
 
 Anyway, that's it for this installment, may your newfound GPG powers bring you peace and privacy!
+
+~moneroguides
