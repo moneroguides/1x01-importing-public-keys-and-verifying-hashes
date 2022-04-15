@@ -1,6 +1,6 @@
 # Getting to Grips with Monero - Importing Public Keys & Verifying Hashes
 
-## PREREQUISITES
+## Prerequisites:
 
 * gpg2 (Linux)
 * Kleopatra (Windows) - [GPG4WIN](https://www.gpg4win.org)
