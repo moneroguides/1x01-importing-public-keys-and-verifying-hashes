@@ -1,0 +1,806 @@
+0:00:04.560,0:00:08.750
+Hello there travellers and welcome to the
+first instalment in the "Getting to grips
+
+0:00:08.750,0:00:10.291
+with Monero" series.
+
+0:00:10.966,0:00:14.970
+This video is for those of you who want to
+ensure that the software you're downloading
+
+0:00:14.970,0:00:19.570
+and running is in fact the one that the authors
+intended you to receive.
+
+0:00:19.570,0:00:22.710
+In other words this is for the security conscious
+user.
+
+0:00:22.710,0:00:27.500
+It may seem like a pain at first, but most
+of what we're doing here is setup and won't
+
+0:00:27.500,0:00:30.238
+be required when verifying files in future.
+
+0:00:30.781,0:00:35.680
+It's also just a good habit to get into and
+once you get the hang of it, it's a breeze.
+
+0:00:36.453,0:00:40.480
+Following these steps before running anything
+on your machine will mean you're safer than
+
+0:00:40.480,0:00:41.980
+if you don't,
+
+0:00:41.980,0:00:45.230
+but please be aware that this is in a relative
+sense.
+
+0:00:45.230,0:00:49.380
+With these steps you're ensuring that you're
+running the software the author intended;
+
+0:00:49.380,0:00:53.112
+it isn't a way to ensure that what the author
+intended is safe.
+
+0:00:53.606,0:00:58.800
+With that out of the way, let's get on to
+the matter at hand, the GNU Privacy Guard
+
+0:00:58.800,0:01:00.620
+or GPG for short.
+
+0:01:00.900,0:01:05.530
+GPG is a complete and free implementation
+of the OpenPGP standard
+
+0:01:05.530,0:01:08.739
+that's been in circulation since 1997.
+
+0:01:09.364,0:01:14.740
+GPG is free software, meaning that it can
+be freely used, modified and distributed.
+
+0:01:14.740,0:01:19.619
+I recommend taking a look at the GNU project
+and the Free Software Foundation.
+
+0:01:19.619,0:01:24.374
+Their webpage, is pretty interesting and you'll
+find a lot more free software there.
+
+0:01:24.851,0:01:29.460
+You can also learn more about the OpenPGP
+standard on their wiki page.
+
+0:01:29.460,0:01:31.640
+All of this is linked in the description.
+
+0:01:31.640,0:01:36.039
+GPG allows anyone to encrypt and sign their
+data and communications.
+
+0:01:36.039,0:01:41.567
+You'll typically be prompted to carry out
+some basic operations when handling Monero-related
+
+0:01:41.567,0:01:46.317
+software, so we thought it'd be good to have
+an easy to follow guide.
+
+0:01:46.711,0:01:51.412
+If you haven't installed the software for
+your operating system already, please go ahead
+
+0:01:51.412,0:01:52.720
+and do so now.
+
+0:01:53.049,0:01:57.780
+As with all our videos, you'll find all the
+required links and terminal commands in the
+
+0:01:57.780,0:01:58.619
+description.
+
+0:01:59.409,0:02:03.920
+Most Linux distributions will have GPG installed
+already.
+
+0:02:03.920,0:02:08.198
+If you find that you don't have it, please
+check your package manager and install it
+
+0:02:08.198,0:02:09.320
+from there.
+
+0:02:09.649,0:02:12.886
+For Windows users you'll need to install Kleopatra.
+
+0:02:18.676,0:02:24.894
+Let's start by opening up a terminal or Powershell
+window and checking which version of GPG we
+
+0:02:24.894,0:02:25.946
+have installed.
+
+0:02:26.472,0:02:30.461
+Don't worry that I'm using Windows, these
+steps are relevant to Linux as well.
+
+0:02:31.234,0:02:34.120
+Feel free to copy and paste along with this
+video,
+
+0:02:34.120,0:02:38.791
+but bare in mind that it's good practice to
+double check the content remains unedited.
+
+0:02:39.515,0:02:44.260
+Let's start by typing `gpg --version` and
+pressing enter.
+
+0:02:44.260,0:02:48.280
+If you're not familiar with using the command
+line, please remember, you need to hit 'enter'
+
+0:02:48.280,0:02:52.809
+after each time that you type a command for
+the terminal to read your input.
+
+0:02:53.384,0:02:56.950
+If you weren't sure if you had it installed,
+this is a pretty good test.
+
+0:02:56.950,0:02:59.629
+This command will print some interesting information,
+including:
+
+0:02:59.629,0:03:05.405
+the version, the licence, the home directory
+for GPG and the supported algorithms.
+
+0:03:06.178,0:03:08.239
+Now we've confirmed that it's installed,
+
+0:03:08.239,0:03:11.631
+we're going to create our very own set of
+shiny new keys.
+
+0:03:12.420,0:03:16.939
+Keys typically come in pairs, a private key
+and a public key.
+
+0:03:16.939,0:03:22.290
+In simple terms, a private key is used to
+prove who you are and a public key is used
+
+0:03:22.290,0:03:24.573
+to tell other people who you are.
+
+0:03:24.968,0:03:29.020
+It's a pretty simple system, but has deep
+roots in cryptography.
+
+0:03:29.020,0:03:33.049
+If you're interested in reading a little more
+about the fundamentals, check out the link
+
+0:03:33.049,0:03:36.652
+in the description entitled 'How PGP Works'.
+
+0:03:37.490,0:03:43.329
+To generate our own set of keys we're going
+to use the command `gpg --full-generate-key`,
+
+0:03:43.329,0:03:45.204
+don't forget to include the hyphens.
+
+0:03:45.730,0:03:49.230
+First it will ask you what kind of key you'd
+like to create.
+
+0:03:49.230,0:03:54.739
+For the purposes of this video we'll be using
+the default option 'RSA', so we'll select
+
+0:03:54.739,0:03:56.138
+option 1.
+
+0:03:56.450,0:03:59.920
+Next it will ask you about the level of encryption
+you require,
+
+0:03:59.920,0:04:04.044
+the larger the number the more data is used
+to generate the keys.
+
+0:04:04.044,0:04:06.767
+More data generally means more secure.
+
+0:04:06.767,0:04:12.232
+We're going to choose 4096 bits as it offers
+the highest level of encryption.
+
+0:04:12.758,0:04:17.785
+We'll then be asked how long we want our keys
+to remain valid, this is a personal choice.
+
+0:04:18.427,0:04:22.320
+As there is no limit to the number of keys
+I can generate and because I won't be hosting
+
+0:04:22.320,0:04:26.901
+my keys publicly, I'm going to choose 0, 'never
+expires'.
+
+0:04:27.918,0:04:30.190
+All keys are assigned user IDs.
+
+0:04:30.190,0:04:34.080
+They're typically made up of a name, comment
+and email address.
+
+0:04:34.080,0:04:38.209
+For the purposes of this video I'm going to
+use the following credentials.
+
+0:04:41.022,0:04:45.920
+Once we've entered all this information we're
+going to type 'o' for 'okay',
+
+0:04:46.331,0:04:51.960
+but before we hit enter I want to warn those
+who like to use password generators:
+
+0:04:51.960,0:04:55.205
+you're going to need to enter a new password
+in the next step.
+
+0:04:56.110,0:05:01.020
+Once we've entered and confirmed the password,
+we're going to generate some entropy, in other
+
+0:05:01.020,0:05:04.440
+words, move the mouse and bash the keyboard
+a bit.
+
+0:05:04.440,0:05:09.831
+The encryption of your keys is based on the
+state of your system, moving the mouse, switching
+
+0:05:09.831,0:05:13.368
+windows and typing helps create more randomness.
+
+0:05:14.174,0:05:19.660
+Now that we've generated our very own keypair,
+we can use the `--list-keys` flag to verify
+
+0:05:19.660,0:05:21.070
+it's existence.
+
+0:05:21.678,0:05:23.799
+--GPG --list-keys
+
+0:05:25.576,0:05:30.200
+During the creation of ours keys, GPG has
+automatically added them to something called
+
+0:05:30.200,0:05:31.440
+a keyring.
+
+0:05:31.440,0:05:36.180
+The subject of key rings is a little outside
+the scope of this video, however it's important
+
+0:05:36.180,0:05:40.169
+to know that they may be different and you
+can create as many as you like.
+
+0:05:40.169,0:05:44.940
+We won't be specifying any in this video and
+because of that we're going to be working
+
+0:05:44.940,0:05:46.499
+with the default keyring.
+
+0:05:51.663,0:05:56.069
+To put everything we've just done into practice
+we're going to verify the install files for
+
+0:05:56.069,0:05:58.120
+the official Monero software.
+
+0:05:58.120,0:06:03.490
+So let's head over to the official Monero
+Github repository and click on the "Releases"
+
+0:06:03.490,0:06:05.128
+link on the right hand side.
+
+0:06:05.654,0:06:09.000
+The latest release will be at the top of the
+page.
+
+0:06:09.000,0:06:13.870
+Scroll down to "Official Download Links" and
+download the file that suits you best.
+
+0:06:13.870,0:06:17.314
+For me it's the 64-bit Windows version.
+
+0:06:18.087,0:06:22.520
+Now that it's downloaded we’ll need two
+important pieces of information:
+
+0:06:22.520,0:06:29.419
+Either a signed copy of the file hashes; or
+a signature file ending with '.asc'
+
+0:06:29.419,0:06:33.250
+and the public key of the person who signed
+them.
+
+0:06:33.250,0:06:39.270
+The first of these is located in the "hashes.txt"
+which you'll find via a link on the release
+
+0:06:39.270,0:06:40.270
+page.
+
+0:06:40.270,0:06:44.389
+I'm going to right click and "save link as".
+
+0:06:44.389,0:06:47.671
+Let's open it and take a look at what we've
+got here.
+
+0:06:48.148,0:06:52.477
+Hashes are unique identifiers that are generated
+by a hashing algorithm.
+
+0:06:52.806,0:06:58.690
+These algorithms are generated using information
+about the file's contents so we can detect
+
+0:06:58.690,0:07:01.179
+changes easily and quickly.
+
+0:07:01.771,0:07:05.979
+In our case, we're interested in making sure
+that the hash of the file we've downloaded
+
+0:07:05.979,0:07:08.387
+matches the hash contained in this file.
+
+0:07:09.061,0:07:13.229
+If you look at the heading and footer, you'll
+notice that this file actually comes in the
+
+0:07:13.229,0:07:15.330
+form of a signed message.
+
+0:07:15.330,0:07:19.940
+This is important, because now we can see
+if these hashes were signed by someone we
+
+0:07:19.940,0:07:20.723
+know.
+
+0:07:21.430,0:07:25.750
+If we take a look just above the signature
+we can see that the person who signed it was
+
+0:07:25.750,0:07:29.720
+a contributor by the name 'binaryfate'.
+
+0:07:29.720,0:07:35.560
+This leads us on to the second piece of information
+we need; Binaryfate's public key.
+
+0:07:35.560,0:07:39.103
+We can find this via the github page we started
+on.
+
+0:07:40.172,0:07:46.072
+Click on the folder labelled **utils**, then
+**gpg_keys**.
+
+0:07:46.812,0:07:50.235
+Here we can find a list of all the contributors'
+public keys.
+
+0:07:50.794,0:07:58.380
+Click on **binaryfate.asc** and then right-click
+**Raw** and save it as an .asc file.
+
+0:07:58.380,0:08:03.220
+Next, open your file explorer and navigate
+to the directory in which you saved these
+
+0:08:03.220,0:08:03.990
+files.
+
+0:08:04.253,0:08:07.330
+Ensure that both files are in the same folder.
+
+0:08:07.330,0:08:10.766
+For me, I've just dumped them in my Downloads folder.
+
+0:08:11.276,0:08:18.020
+With the file explorer open, 'shift+right-click'
+and select ‘open Powershell here’.
+
+0:08:18.020,0:08:22.710
+If you're a Linux user, you can 'right-click'
+and select open terminal here.
+
+0:08:22.710,0:08:27.139
+Since I'm a Windows 11 user it's a bit different
+for me as I just have to right-click and choose
+
+0:08:27.139,0:08:28.919
+'Open in Windows Terminal.'
+
+0:08:28.919,0:08:31.908
+In all cases it's a fairly similar process.
+
+0:08:33.405,0:08:37.390
+At this point we’re interested in taking
+a look at the fingerprint of binaryfate's
+
+0:08:37.390,0:08:38.582
+public key.
+
+0:08:38.928,0:08:43.019
+Fingerprints are best thought of as summaries
+of the key.
+
+0:08:43.019,0:08:48.000
+We can view this fingerprint with the following
+command: `gpg --keyid-format long --with-fingerprint binaryfate.asc`
+
+0:08:48.518,0:08:52.720
+Fingerprints are a useful way of making sure
+that the key you're importing is actually
+
+0:08:52.720,0:08:54.190
+the one you want.
+
+0:08:54.190,0:08:58.380
+If you know the person whose key you're trying
+to import you can check it with them the old-fashioned
+
+0:08:58.380,0:09:03.390
+way by just asking if this key belongs to
+them, but you'll often find that a fingerprint
+
+0:09:03.390,0:09:08.043
+will be hosted somewhere on the internet so
+you won't need to contact anybody directly.
+
+0:09:08.519,0:09:13.660
+Please bear in mind, if a web page or repo
+has been compromised and the fingerprint and
+
+0:09:13.660,0:09:19.130
+the public key are located in the same place,
+the likelihood is that these were compromised
+
+0:09:19.130,0:09:23.170
+too, so checking the fingerprint is pretty
+much pointless.
+
+0:09:23.170,0:09:29.500
+However, if the fingerprint and key are hosted
+in multiple locations, it's always worth comparing
+
+0:09:29.500,0:09:30.946
+them to be sure.
+
+0:09:31.439,0:09:37.940
+In our case, we can find the fingerprint for
+binaryfate's public key on the GetMonero site.
+
+0:09:37.940,0:09:44.620
+Click on the heading "Verify and Import Signing
+Key" and scroll down until you find the "Verify
+
+0:09:44.620,0:09:47.534
+the fingerprint matches" section.
+
+0:09:47.534,0:09:52.950
+Now we can visually compare that to the one
+which is printed in our terminal window.
+
+0:09:52.950,0:09:59.310
+If you've got a match, great, if not, verify
+the web links you used and report your findings
+
+0:09:59.310,0:10:01.229
+to the community.
+
+0:10:03.000,0:10:06.820
+Now that we have a little more confidence
+in the key we've downloaded we're going to
+
+0:10:06.820,0:10:12.534
+use the command `gpg --import binaryfate.asc`.
+
+0:10:13.241,0:10:18.960
+Once again we can use `gpg --list-keys` to
+verify that it's been added to our keyring.
+
+0:10:25.687,0:10:30.410
+This step is in many cases unnecessary and
+is more relevant to public keyrings and the
+
+0:10:30.410,0:10:32.871
+pgp ecosystem as a whole.
+
+0:10:33.430,0:10:37.760
+It's particularly important for something
+called the 'web of trust', which is totally
+
+0:10:37.760,0:10:39.466
+outside the scope of this video.
+
+0:10:39.466,0:10:44.760
+However you can learn more about the web of
+trust through the p2p foundation.
+
+0:10:44.760,0:10:49.120
+For us, going through this step means that
+you have a more simple log when you verify
+
+0:10:49.120,0:10:51.230
+signatures in the future.
+
+0:10:52.858,0:10:57.470
+It's possible to add this level of trust to
+the signature you've imported with the `--edit-key`
+
+0:10:57.470,0:10:58.702
+flag.
+
+0:10:59.162,0:11:06.010
+In our case we'll use the command `gpg --edit-key`
+along with binaryfate's email address to identify
+
+0:11:06.010,0:11:07.128
+the key.
+
+0:11:08.230,0:11:11.410
+This command will start up the GPG prompt.
+
+0:11:11.410,0:11:18.120
+You'll know it's running when you see `gpg>`,
+you now have a few options including the ability
+
+0:11:18.120,0:11:23.302
+to sign it with your own key, type ‘help’
+to find out what else you can do.
+
+0:11:24.749,0:11:30.221
+For now, let’s type 'sign', confirm with
+'y' and then enter the password you set up
+
+0:11:30.221,0:11:31.709
+in the previous step.
+
+0:11:31.709,0:11:35.610
+Don't worry if you see `failed: Access is
+denied`.
+
+0:11:35.610,0:11:39.680
+This seems to happen every time the password
+prompt appears and does not mean the operation
+
+0:11:39.680,0:11:41.019
+has failed.
+
+0:11:41.019,0:11:45.370
+If you try to sign the key again you will
+be able to confirm whether or not the first
+
+0:11:45.370,0:11:46.960
+attempt was successful
+
+0:11:48.983,0:11:49.970
+All done.
+
+0:11:49.970,0:11:53.461
+Use 'ctrl+c' to exit the gpg prompt.
+
+0:11:58.395,0:12:03.079
+Everything we've done so far has now given
+us the ability to verify the signature in
+
+0:12:03.079,0:12:05.770
+the text file we downloaded earlier.
+
+0:12:05.770,0:12:11.720
+The next command we're going to use is `gpg
+--verify hashes.txt`.
+
+0:12:11.720,0:12:16.701
+If you're typing this out yourself, remember
+that you can use 'TAB' to autocomplete file names.
+
+0:12:16.865,0:12:21.548
+Although in this case the file name is short enough that it's not really necessary.
+
+0:12:21.811,0:12:26.420
+If everything has gone to plan, we should
+see a message stating 'Good signature from
+
+0:12:26.420,0:12:28.430
+"binaryFate <binaryfate@getmonero.org>"'.
+
+0:12:28.430,0:12:32.692
+If you don't receive this message, please
+be sure to verify the links you used 
+
+0:12:32.692,0:12:35.300
+and report your findings to the community.
+
+0:12:36.402,0:12:41.469
+Now we can compare the hashes in the text
+file to those of the file we downloaded.
+
+0:12:42.000,0:12:47.293
+If you're using Linux you can use the command
+`sha256sum --check hashes.txt`, 
+
+0:12:47.293,0:12:53.012
+then look for the version we downloaded and check to
+see if everything is "OK".
+
+0:12:53.012,0:13:00.000
+If you're using Windows, use the command `Get-Filehash`
+and then the name of the file you downloaded.
+
+0:13:00.000,0:13:05.287
+Manually compare this hash to the one in the
+hashes.txt file.
+
+0:13:07.655,0:13:08.669
+GREAT!
+
+0:13:08.669,0:13:14.170
+Now we know the software that we have is the
+one intended by the person who signed these hashes.
+
+0:13:18.806,0:13:24.089
+GPG has a lot of interesting features and
+gives users the ability to sign, encrypt and
+
+0:13:24.089,0:13:26.420
+decrypt messages.
+
+0:13:26.420,0:13:32.110
+The 'hashes.txt' file we used earlier was
+signed with GPG by its creator, this also
+
+0:13:32.110,0:13:37.350
+applies to our contact details on our website
+and the scripts for our videos.
+
+0:13:37.350,0:13:40.731
+Let's have a go at signing our own "clear
+text" message.
+
+0:13:41.389,0:13:44.870
+First create a text file called anything you
+like.
+
+0:13:44.870,0:13:46.630
+Here's one I made earlier.
+
+0:13:46.630,0:13:50.599
+Then use the command: `gpg --user * --clearsign
+message.txt`. Which can be found in the description
+
+0:13:50.895,0:13:55.871
+The asterisk ( * ) should be replaced by the
+name given to the private key you wish to use.
+
+0:13:56.649,0:14:03.148
+The file name 'message.txt' can be replaced
+by the name of whatever file you wish to sign.
+
+0:14:03.148,0:14:07.820
+If you created multiple key pairs and you're
+unsure of your user name, you can use the
+
+0:14:07.820,0:14:11.621
+command `gpg --list-keys` as we've done previously.
+
+0:14:12.641,0:14:17.586
+Once the command is finished running you should
+have a new file in the working directory.
+
+0:14:17.586,0:14:23.486
+It should have the same format as your original
+file with the suffix ".asc".
+
+0:14:27.762,0:14:31.600
+It's also possible to encrypt and decrypt
+messages.
+
+0:14:31.600,0:14:37.170
+The most convenient way to share these messages
+is using the ACSII armor function.
+
+0:14:37.170,0:14:42.849
+The following command will create an encrypted
+message using the monero-guides private key
+
+0:14:43.515,0:14:47.912
+Anyone who has our public key, is able to
+decrypt this message.
+
+0:14:47.912,0:14:50.355
+Decrypting these messages is rather simple.
+
+0:14:50.638,0:14:55.720
+In the next example we're going to encrypt
+a message that can be decrypted by only us
+
+0:14:55.720,0:14:58.050
+at monero-guides: `gpg --user monero-guides
+--recipient monero-guides --sign --armor message.txt`.
+
+0:14:58.050,0:15:00.890
+Watch out for the easter eggs coming up in
+the following videos.
+
+0:15:00.890,0:15:04.754
+There'll be a nice reward for a lucky viewer
+who's been paying attention.
+
+0:15:09.820,0:15:13.475
+To close out this tutorial we'll leave you
+with this piece of advice:
+
+0:15:13.475,0:15:18.197
+PGP relies heavily on trust so you should
+be sure that the public key you have in your
+
+0:15:18.197,0:15:21.188
+keyring is in fact trustworthy.
+
+0:15:21.188,0:15:26.336
+If it isn't, then you may as well skip everything
+in this guide and accept the potential risks
+
+0:15:26.336,0:15:28.729
+of running an unverified file.
+
+0:15:28.729,0:15:34.339
+Although everything in this tutorial is optional,
+it is best practice and greatly reduces the
+
+0:15:34.339,0:15:38.190
+capabilities of bad actors to infiltrate your
+machine.
+
+0:15:38.190,0:15:43.010
+The instructions in this video will be relevant
+to a lot of our other videos so please make
+
+0:15:43.010,0:15:45.579
+yourself familiar with GPG.
+
+0:15:45.579,0:15:51.930
+Anyway, that's it for this instalment, may
+your newfound GPG powers bring you peace and
+
+0:15:51.930,0:15:52.930
+privacy!
+
+0:15:52.930,0:15:53.433
+~moneroguides
